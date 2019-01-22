@@ -1,0 +1,14 @@
+\chapter{Introduction}
+
+Software Defined Networking (SDN) aims to solve the ossification of legacy networks by decoupling the control plane from the data plane. The separation greatly boosts the adaptability of the network by enabling the implementation of high level policies without the need to change the data plane-level switches \cite{Benzekki2016}. The most used communications protocol for SDN is OpenFlow.
+
+Routing tables inside these switches work with routing tables (also called forwarding tables), that contain rules by which to route packets that arrive. The size constraints of the routing tables in Openflow-based SDN solutions is one of the platform's main limitations \cite{Benzekki2016} \cite{Luo2015}. There are a number of approaches to deal with this issue \cite{Nguyen2016}; in this report, we focus on methods that aggregate various table entries into a single one. 
+
+The implementation of these aggregation algorithms as part of existing OpenFlow applications or controllers calls for the uniform abstraction of the different components of flow table rule entries. 
+Despite the wealth of aggregation algorithms and indeed of SDN controllers \cite{Nunes2014}, there is no such platform widely available. The work presented in this report aims to be the basis for such a system, by providing the basics of a controller-agnostic extensible system for the implementation and evaluation of flow table rule aggregation algorithms. It was modeled to be used in conjunction with the existing SDN applications being developed in the Chair for Communication Networks.
+
+The rest of the report is organized as follows. As mentioned above, Chapter 2 more deeply explains the background and motivation for our project. Chapter 3 explores the architecture present in our solution and describes how it can be called from existing Java SDN applications. It includes descriptions of how to implement further SDN controllers and aggregation algorithms. Both of these actions are illustrated in the two chapters that follow. 
+
+The aggregation algorithms that are implemented exemplarily are presented in chapter 4. Chapter 5 illustrates our own implementation of the Floodlight SDN Controller platform. We then showcase the comparison functionality of the application in Chapter 6 with the evaluation of the selected aggregation algorithms. 
+
+Finally, Chapter 7 presents our conclusions and suggests exploration areas for future research.
